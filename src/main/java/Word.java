@@ -1,5 +1,5 @@
 public class Word {
-    private String word_target
+    private String word_target;
     private String word_explain;
 
     public void setWord_explain(String word_explain) {
@@ -35,5 +35,13 @@ public class Word {
     public Word(Word w1) {
         this.word_target = w1.word_target;
         this.word_explain = w1.word_explain;
+    }
+
+    /**
+     * Constructor 3.
+     */
+    public Word() {
+        this.word_target = "nothing";
+        this.word_explain = "nothing";
     }
 }
