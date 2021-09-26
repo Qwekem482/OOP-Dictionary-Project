@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DictionaryManagement {
     private Word w1 = new Word();
-    private Dictionary dict = new Dictionary();
+    private Dictionary dict = new Dictionary(); //Need to rewrite after has trie dictionary
 
     private void insertWord(Scanner input) {
         w1.setWord_target(input.nextLine());
