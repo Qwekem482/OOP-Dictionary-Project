@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DictionaryManagement {
     private Word w1 = new Word();
-    private Dictionary dict = new Dictionary(); //Need to rewrite after has trie dictionary
+    private Dictionary dict = new Dictionary();
 
     /**
      * Core of Insert word to dictionary from both CMD and .TXT functions
@@ -11,7 +11,7 @@ public class DictionaryManagement {
     private void insertWord(Scanner input) {
         w1.setWord_target(input.nextLine());
         w1.setWord_explain(input.nextLine());
-        dict.addWordToMap(w1); //Need to rewrite after has trie dictionary
+        dict.addWordToDict(w1);
     }
 
     /**
