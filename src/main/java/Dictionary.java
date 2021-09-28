@@ -27,12 +27,5 @@ public class Dictionary {
             System.out.printf(formatWord, key, list.get(key));
         }
     }
-    //change the word to the normal
-    /**
-     * @param input: the word.target
-     */
-    public String Change(String input){
-        input = input.toLowerCase();
-        return input;
-    }
+
 }
