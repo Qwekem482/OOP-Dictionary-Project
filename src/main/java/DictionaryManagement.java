@@ -5,28 +5,30 @@ public class DictionaryManagement {
     private Dictionary dict = new Dictionary();
 
     /**
-     * Core of Insert word to dictionary from both CMD and .TXT functions
-     * @param input: input stream which have word's data
-     */
-    private void insertWord(Scanner input) {
-        w1.setWord_target(input.nextLine());
-        w1.setWord_explain(input.nextLine());
-        dict.addWordToDict(w1);
-    }
-
-    /**
-     * Insert word to dictionary from CMD
+     * Insert word to dictionary from CMD.
      */
     public void insertFromCommandline() {
-        Scanner input = new Scanner(System.in);
-        while (input.hasNextLine()) {
-            insertWord(input);
+        Scanner input;
+        while (true) {
+            input = new Scanner(System.in);
+            System.out.print("Type 'ESC' to exit adding, 'CON' to continue adding: ");
+            String isEsc = input.nextLine();
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            if (isEsc.equals("ESC")) {
+                break;
+            } else if (isEsc.equals("CON")) {
+                System.out.print("Word: ");
+                w1.setWord_target(input.nextLine());
+                System.out.print("Meaning: ");
+                w1.setWord_explain(input.nextLine());
+                dict.addWordToDict(w1);
+            }
         }
-        insertWord(input);
     }
 
     /**
-     * this function help us to show the array of word in the function DictBasic in the class DictCMD
+     * this function help us to show the array of word in the function DictBasic in the class DictCMD.
      */
     public void ShowWord(){
         dict.showDict();
