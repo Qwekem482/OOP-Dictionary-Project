@@ -9,8 +9,8 @@ public class DictionaryManagement {
      * @param input: input stream which have word's data
      */
     private void insertWord(Scanner input) {
-        w1.setWord_target((input.nextLine()).toLowerCase());
-        w1.setWord_explain((input.nextLine()).toLowerCase());
+        w1.setWord_target(input.nextLine());
+        w1.setWord_explain(input.nextLine());
         dict.addWordToDict(w1);
     }
 
