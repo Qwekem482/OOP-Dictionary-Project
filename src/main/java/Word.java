@@ -3,11 +3,11 @@ public class Word {
     private String word_explain;
 
     public void setWord_explain(String word_explain) {
-        this.word_explain = word_explain;
+        this.word_explain = word_explain.toLowerCase();
     }
 
     public void setWord_target(String word_target) {
-        this.word_target = word_target;
+        this.word_target = word_target.toLowerCase();
     }
 
     public String getWord_explain() {
@@ -24,8 +24,8 @@ public class Word {
      * @param word_explain: Meaning in Vietnamese
      */
     public Word(String word_target, String word_explain) {
-        this.word_target = word_target;
-        this.word_explain = word_explain;
+        this.word_target = word_target.toLowerCase();
+        this.word_explain = word_explain.toLowerCase();
     }
 
     /**
