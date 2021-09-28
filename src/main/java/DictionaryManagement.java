@@ -9,8 +9,8 @@ public class DictionaryManagement {
      * @param input: input stream which have word's data
      */
     private void insertWord(Scanner input) {
-        w1.setWord_target(input.nextLine());
-        w1.setWord_explain(input.nextLine());
+        w1.setWord_target((input.nextLine()).toLowerCase());
+        w1.setWord_explain((input.nextLine()).toLowerCase());
         dict.addWordToDict(w1);
     }
 
@@ -25,4 +25,10 @@ public class DictionaryManagement {
         insertWord(input);
     }
 
+    /**
+     * this function help us to show the array of word in the function DictBasic in the class DictCMD
+     */
+    public void ShowWord(){
+        dict.showDict();
+    }
 }
