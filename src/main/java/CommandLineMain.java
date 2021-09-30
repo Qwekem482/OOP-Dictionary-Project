@@ -16,16 +16,14 @@ public class CommandLineMain {
     }
 
     public static void main(String[] args) {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        DictionaryManagement.clrscr();
         System.out.println("      English  - Vietnamese Dictionary v1.0.0");
         System.out.println("                        made by Qwekem482 and letthai");
         while (menuControl) {
             System.out.println("-----------------------------------------------------");
             System.out.println("What do you want to do?");
             menu();
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
+            DictionaryManagement.clrscr();
             switch (choice) {
                 case 1:
                     dict.dictionaryBasic();
