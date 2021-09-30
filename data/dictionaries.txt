@@ -1,0 +1,4 @@
+hello	xin chao
+house	ngoi nha
+bye	tam biet
+home	nha

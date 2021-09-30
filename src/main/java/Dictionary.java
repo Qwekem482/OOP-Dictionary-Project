@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.TreeMap;
 
 public class Dictionary {
@@ -30,4 +31,18 @@ public class Dictionary {
         }
     }
 
+    /**
+     * find a word in dictionary.
+     * @param target word need meaning
+     * @return meaning or error message
+     */
+    public String findWordInDict(String target) {
+        target = target.toLowerCase();
+        for (String key : list.keySet()) {
+            if (target.equals(key)) {
+                return list.get(key);
+            }
+        }
+        return "Can't find this word, please try again.";
+    }
 }
