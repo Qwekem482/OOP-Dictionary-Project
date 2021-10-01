@@ -17,4 +17,13 @@ public class DictionaryCommandline {
         System.out.println("The Dictionary after adding new word");
         this.manage.ShowWord();
     }
+    /**
+     * Call the insert Word, ShowWord and DictLookup
+     */
+    public void dictionaryAdvanced(){
+        this.manage.insertFromCommandline();
+        System.out.println("The Dictionary after adding new word");
+        this.manage.ShowWord();
+        this.manage.dictionaryLookup();
+    }
 }
