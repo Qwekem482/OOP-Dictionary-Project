@@ -69,7 +69,7 @@ public class DictionaryManagement {
      * Look up word in dictionary function and UI.
      * @param target word need meaning
      */
-    public void dictionaryLookup(String target) {
+    public void dictionaryLookup() {
         Scanner input;
         while (true) {
             input = new Scanner(System.in);
@@ -80,6 +80,7 @@ public class DictionaryManagement {
                 break;
             } else if (isEsc.equals("CON")) {
                 System.out.print("Word: ");
+                String target = input.nextLine();
                 if (!dict.findWordInDict(target).equals
                         ("Can't find this word, please try again.")) {
                     System.out.println("Meaning: " + dict.findWordInDict(target));
