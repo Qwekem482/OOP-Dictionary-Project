@@ -1,7 +1,6 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.file.Path;
 import java.util.Scanner;
-import java.io.IOException;
 
 public class DictionaryManagement {
     private Word w1 = new Word();
@@ -46,14 +45,20 @@ public class DictionaryManagement {
      * Word & meaning separate by tab.
      * @throws FileNotFoundException when cannot find file
      */
-    public void  insertFromFile() throws FileNotFoundException {
-        File currentDir = new File (".");
-        File parentDir = currentDir.getParentFile();
-        Scanner inputScan = new Scanner(new File(parentDir, "data//dictionaries.txt"));
-        inputScan = inputScan.useDelimiter( "\\t" );
+    public void insertFromFile() throws FileNotFoundException {
+        Path currentDir = Path.of(System.getProperty("user.dir"));
+        Path dataDir = currentDir.resolve("data//dictionaries.txt");
+        File dataFile = new File(String.valueOf(dataDir));
+        Scanner inputScan = new Scanner(dataFile);
         while (inputScan.hasNext()) {
-            w1.setWord_target(inputScan.next());
-            w1.setWord_explain(inputScan.next());
+            if (inputScan.hasNext()) {
+                inputScan = inputScan.useDelimiter( "\\t" );
+                w1.setWord_target(inputScan.next());
+            }
+            if (inputScan.hasNext()) {
+                inputScan = inputScan.useDelimiter( "\\n" );
+                w1.setWord_explain(inputScan.next());
+            }
             dict.addWordToDict(w1);
         }
     }
@@ -61,15 +66,15 @@ public class DictionaryManagement {
     /**
      * this function help us to show the array of word in the function DictBasic in the class DictCMD.
      */
-    public void ShowWord(){
+    public void ShowWord() throws FileNotFoundException {
+        this.insertFromFile();
         dict.showDict();
     }
 
     /**
      * Look up word in dictionary function and UI.
-     * @param target word need meaning
      */
-    public void dictionaryLookup() {
+    public void dictionaryLookup() throws IOException {
         Scanner input;
         while (true) {
             input = new Scanner(System.in);
@@ -79,6 +84,7 @@ public class DictionaryManagement {
             if (isEsc.equals("ESC")) {
                 break;
             } else if (isEsc.equals("CON")) {
+                insertFromFile();
                 System.out.print("Word: ");
                 String target = input.nextLine();
                 if (!dict.findWordInDict(target).equals

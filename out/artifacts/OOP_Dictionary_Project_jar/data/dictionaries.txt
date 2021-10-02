@@ -1,5 +1,5 @@
 hello	xin chao
 house	ngoi nha
 bye	tam biet
-home	nha
-hello 3	chao 3
+poison	doc
+smile	cuoi

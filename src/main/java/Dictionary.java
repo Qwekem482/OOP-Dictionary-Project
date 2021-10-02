@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.TreeMap;
 
 public class Dictionary {

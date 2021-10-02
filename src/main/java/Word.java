@@ -3,10 +3,22 @@ public class Word {
     private String word_explain;
 
     public void setWord_explain(String word_explain) {
+        //when insert from file, word explain have /t as the begin char
+        if(word_explain.charAt(0) == '\t') {
+            String delBeginning = word_explain.substring(1);
+            this.word_explain = delBeginning.toLowerCase();
+            return;
+        }
         this.word_explain = word_explain.toLowerCase();
     }
 
     public void setWord_target(String word_target) {
+        //when insert from file, word target have /n as the begin char
+        if(word_target.charAt(0) == '\n' || word_target.charAt(0) == '\t') {
+            String delBeginning = word_target.substring(1);
+            this.word_target = delBeginning.toLowerCase();
+            return;
+        }
         this.word_target = word_target.toLowerCase();
     }
 
