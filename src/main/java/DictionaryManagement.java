@@ -38,6 +38,7 @@ public class DictionaryManagement {
                 dict.addWordToDict(w1);
             }
         }
+
     }
 
     /**
@@ -66,8 +67,7 @@ public class DictionaryManagement {
     /**
      * this function help us to show the array of word in the function DictBasic in the class DictCMD.
      */
-    public void ShowWord() throws FileNotFoundException {
-        this.insertFromFile();
+    public void ShowWord() {
         dict.showDict();
     }
 
@@ -84,7 +84,6 @@ public class DictionaryManagement {
             if (isEsc.equals("ESC")) {
                 break;
             } else if (isEsc.equals("CON")) {
-                insertFromFile();
                 System.out.print("Word: ");
                 String target = input.nextLine();
                 if (!dict.findWordInDict(target).equals
@@ -95,6 +94,63 @@ public class DictionaryManagement {
                 }
             }
         }
+    }
 
+    /**
+     * Modify a word
+     */
+    public void modifyWord() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please select: ");
+        System.out.println("1. Modify English word");
+        System.out.println("2. Modify Vietnamese meaning");
+        System.out.print("Your choice: ");
+        String choice = input.nextLine();
+        clrscr();
+        switch (choice) {
+            case "1":
+                System.out.print("The word you want to modify: ");
+                w1.setWord_target(input.nextLine());
+                System.out.print("Modify to: ");
+                w1.setWord_explain(input.nextLine());
+                //target is word need modify, explain is modify to
+                dict.modifyWord(w1.getWord_target(), w1.getWord_explain());
+                break;
+            case "2":
+                System.out.print("The word you want to modify: ");
+                w1.setWord_target(input.nextLine());
+                System.out.print("Modify to: ");
+                w1.setWord_explain(input.nextLine());
+                dict.modifyMeaning(w1.getWord_target(), w1.getWord_explain());
+                break;
+            default:
+                break;
+        }
+        clrscr();
+        System.out.println("The dictionary after modify");
+        dict.showDict();
+    }
+
+    /**
+     * Delete a word
+     */
+    public void deleteWord() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("The word you want to delete: ");
+        String needDelete = input.next();
+        dict.deleteWord(needDelete);
+        clrscr();
+        System.out.println("The dictionary after delete");
+        dict.showDict();
+    }
+
+    public void dictionaryExportToFile() throws FileNotFoundException {
+        Path currentDir = Path.of(System.getProperty("user.dir"));
+        Path dataDir = currentDir.resolve("data//dictionaries.txt");
+        File dataFile = new File(String.valueOf(dataDir));
+        PrintWriter writer = new PrintWriter(dataFile);
+        writer.print("");
+        writer.close();
+        dict.exportDictToFile(dataFile);
     }
 }

@@ -1,5 +1,6 @@
 bye	tam biet
 good bye	chao tam biet
-hello\	xin chao
+hello	xin chao
 home	nha
 house	ngoi nha
+iced cream	kem lanh

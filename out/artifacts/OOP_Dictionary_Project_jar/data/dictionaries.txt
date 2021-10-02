@@ -1,5 +1,0 @@
-hello	xin chao
-house	ngoi nha
-bye	tam biet
-poison	doc
-smile	cuoi

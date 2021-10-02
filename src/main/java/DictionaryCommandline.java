@@ -8,6 +8,7 @@ public class DictionaryCommandline {
      * show all the word in the array.
      */
     public void showAllWords() throws FileNotFoundException {
+        manage.insertFromFile();
         this.manage.ShowWord();
     }
 
@@ -15,18 +16,41 @@ public class DictionaryCommandline {
      * Insert Word and show the all the word in the array.
      */
     public void dictionaryBasic() throws FileNotFoundException {
+        manage.insertFromFile();
         this.manage.insertFromCommandline();
         System.out.println("The Dictionary after adding new word");
         this.manage.ShowWord();
+        this.manage.dictionaryExportToFile();
     }
 
     /**
-     * Call the insert Word, ShowWord and DictLookup
+     * Call the insert Word, ShowWord and DictLookup.
      */
     public void dictionaryAdvanced() throws IOException {
-        this.manage.insertFromFile();
+        manage.insertFromFile();
         this.manage.ShowWord();
         this.manage.dictionaryLookup();
+        this.manage.dictionaryExportToFile();
     }
+
+    /**
+     * Modify word.
+     */
+    public void modifyWord() throws FileNotFoundException {
+        manage.insertFromFile();
+        this.manage.modifyWord();
+        this.manage.dictionaryExportToFile();
+    }
+
+    /**
+     * Delete word.
+     */
+    public void deleteWord() throws FileNotFoundException {
+        manage.insertFromFile();
+        this.manage.deleteWord();
+        this.manage.dictionaryExportToFile();
+    }
+
+
 }
 
