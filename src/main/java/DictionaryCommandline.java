@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DictionaryCommandline {
     private DictionaryManagement manage = new DictionaryManagement();
@@ -51,6 +52,11 @@ public class DictionaryCommandline {
         this.manage.dictionaryExportToFile();
     }
 
-
+    /**
+     * Funtion DictionarySearch().
+     */
+    public void SictionnarySearch(){
+        manage.DictSearch();
+    }
 }
 

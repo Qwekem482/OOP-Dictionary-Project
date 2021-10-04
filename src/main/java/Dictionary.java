@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class Dictionary {
@@ -98,5 +99,11 @@ public class Dictionary {
         } else {
             System.out.println("Can't find this word");
         }
+    }
+    int Count(){
+        return list.size();
+    }
+    public Set<String> getKeyValue(){
+        return list.keySet();
     }
 }

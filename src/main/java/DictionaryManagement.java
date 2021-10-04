@@ -1,6 +1,7 @@
 import java.io.*;
 import java.nio.file.Path;
 import java.util.Scanner;
+import java.util.Set;
 
 public class DictionaryManagement {
     private Word w1 = new Word();
@@ -9,13 +10,14 @@ public class DictionaryManagement {
     /**
      * Clear screen of CMD.
      */
-    public static void clrscr(){
+    public static void clrscr() {
         try {
             if (System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             else
                 Runtime.getRuntime().exec("clear");
-        } catch (IOException | InterruptedException ex) {}
+        } catch (IOException | InterruptedException ex) {
+        }
     }
 
     /**
@@ -44,6 +46,7 @@ public class DictionaryManagement {
     /**
      * Read data from file then add word to dict.
      * Word & meaning separate by tab.
+     *
      * @throws FileNotFoundException when cannot find file
      */
     public void insertFromFile() throws FileNotFoundException {
@@ -53,11 +56,11 @@ public class DictionaryManagement {
         Scanner inputScan = new Scanner(dataFile);
         while (inputScan.hasNext()) {
             if (inputScan.hasNext()) {
-                inputScan = inputScan.useDelimiter( "\\t" );
+                inputScan = inputScan.useDelimiter("\\t");
                 w1.setWord_target(inputScan.next());
             }
             if (inputScan.hasNext()) {
-                inputScan = inputScan.useDelimiter( "\\n" );
+                inputScan = inputScan.useDelimiter("\\n");
                 w1.setWord_explain(inputScan.next());
             }
             dict.addWordToDict(w1);
@@ -152,5 +155,28 @@ public class DictionaryManagement {
         writer.print("");
         writer.close();
         dict.exportDictToFile(dataFile);
+    }
+
+    /**
+     * Function DictSearch help us find the word we want.
+     *
+     * @param find is the word we want to find.
+     */
+    public void DictSearch() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap tu tieng anh muon tra: ");
+        String find = sc.next();
+        boolean flag = false;
+        Set<String> target = dict.getKeyValue();
+        for (String key : target) {
+            if (target.toString().substring(0, find.length()).equals(find)) {
+                flag = true;
+                System.out.println(target.toString());
+                break;
+            }
+        }
+        if (!flag) {
+            System.out.print("NOT FOUND");
+        }
     }
 }
