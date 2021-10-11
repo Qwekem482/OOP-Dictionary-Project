@@ -25,22 +25,14 @@ public class DictionaryManagement {
      */
     public void insertFromCommandline() {
         Scanner input;
-        while (true) {
-            input = new Scanner(System.in);
-            System.out.print("Type 'ESC' to exit adding, 'CON' to continue adding: ");
-            String isEsc = input.nextLine();
-            clrscr();
-            if (isEsc.equals("ESC")) {
-                break;
-            } else if (isEsc.equals("CON")) {
-                System.out.print("Word: ");
-                w1.setWord_target(input.nextLine());
-                System.out.print("Meaning: ");
-                w1.setWord_explain(input.nextLine());
-                dict.addWordToDict(w1);
-            }
-        }
-
+        input = new Scanner(System.in);
+        clrscr();
+        System.out.print("Word: ");
+        w1.setWord_target(input.nextLine());
+        System.out.print("Meaning: ");
+        w1.setWord_explain(input.nextLine());
+        dict.addWordToDict(w1);
+        clrscr();
     }
 
     /**
@@ -79,23 +71,15 @@ public class DictionaryManagement {
      */
     public void dictionaryLookup() throws IOException {
         Scanner input;
-        while (true) {
-            input = new Scanner(System.in);
-            System.out.print("Type 'ESC' to exit looking up, 'CON' to continue looking up: ");
-            String isEsc = input.nextLine();
-            clrscr();
-            if (isEsc.equals("ESC")) {
-                break;
-            } else if (isEsc.equals("CON")) {
-                System.out.print("Word: ");
-                String target = input.nextLine();
-                if (!dict.findWordInDict(target).equals
-                        ("Can't find this word, please try again.")) {
-                    System.out.println("Meaning: " + dict.findWordInDict(target));
-                } else {
-                    System.out.println(dict.findWordInDict(target));
-                }
-            }
+        input = new Scanner(System.in);
+        clrscr();
+        System.out.print("Word: ");
+        String target = input.nextLine();
+        if (!dict.findWordInDict(target).equals
+                ("Can't find this word, please try again.")) {
+            System.out.println("Meaning: " + dict.findWordInDict(target));
+        } else {
+            System.out.println(dict.findWordInDict(target));
         }
     }
 
@@ -139,7 +123,7 @@ public class DictionaryManagement {
      */
     public void deleteWord() {
         Scanner input = new Scanner(System.in);
-        System.out.println("The word you want to delete: ");
+        System.out.print("The word you want to delete: ");
         String needDelete = input.next();
         dict.deleteWord(needDelete);
         clrscr();
@@ -159,8 +143,6 @@ public class DictionaryManagement {
 
     /**
      * Function DictSearch help us find the word we want.
-     *
-     * @param find is the word we want to find.
      */
     public void DictSearch() {
         Scanner sc = new Scanner(System.in);

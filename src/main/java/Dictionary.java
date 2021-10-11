@@ -67,6 +67,7 @@ public class Dictionary {
      * @param newModify word_target after modify
      */
     public void modifyWord(String needModify, String newModify) {
+        if (needModify.equals(newModify)) return;
         if (list.containsKey(needModify)) {
             this.list.put(newModify, list.get(needModify));
             list.remove(needModify);

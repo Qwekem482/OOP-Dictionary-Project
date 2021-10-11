@@ -31,7 +31,6 @@ public class DictionaryCommandline {
         manage.insertFromFile();
         this.manage.ShowWord();
         this.manage.dictionaryLookup();
-        this.manage.dictionaryExportToFile();
     }
 
     /**

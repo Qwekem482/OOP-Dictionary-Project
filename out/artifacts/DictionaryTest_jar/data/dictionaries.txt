@@ -1,6 +1,8 @@
 bye	tam biet
 good bye	chao tam biet
+grape	qua nho
 hello	xin chao
 home	nha
 house	ngoi nha
 iced cream	kem lanh
+orange	mau cam
