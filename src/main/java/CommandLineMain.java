@@ -12,7 +12,8 @@ public class CommandLineMain {
         System.out.println("3. Look up a word");
         System.out.println("4. Modify word");
         System.out.println("5. Delete word");
-        System.out.println("6. Exit the Dictionary");
+        System.out.println("6. Search a word");
+        System.out.println("7. Exit the Dictionary");
         System.out.print("Your choice: ");
         Scanner input = new Scanner(System.in);
         choice = input.nextInt();
@@ -44,6 +45,9 @@ public class CommandLineMain {
                     dict.deleteWord();
                     break;
                 case 6:
+                    dict.dictionnarySearch();
+                    break;
+                case 7:
                     menuControl = false;
                     break;
                 default:

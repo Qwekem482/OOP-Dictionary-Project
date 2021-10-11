@@ -55,7 +55,8 @@ public class DictionaryCommandline {
     /**
      * Funtion DictionarySearch().
      */
-    public void SictionnarySearch(){
+    public void dictionnarySearch() throws FileNotFoundException {
+        manage.insertFromFile();
         manage.DictSearch();
     }
 }

@@ -164,7 +164,7 @@ public class DictionaryManagement {
      */
     public void DictSearch() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap tu tieng anh muon tra: ");
+        System.out.print("Insert word: ");
         String find = sc.next();
         boolean flag = false;
         Set<String> target = dict.getKeyValue();
@@ -176,7 +176,7 @@ public class DictionaryManagement {
             }
         }
         if (!flag) {
-            System.out.print("NOT FOUND");
+            System.out.println("NOT FOUND");
         }
     }
 }
