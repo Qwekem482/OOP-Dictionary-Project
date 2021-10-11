@@ -169,10 +169,9 @@ public class DictionaryManagement {
         boolean flag = false;
         Set<String> target = dict.getKeyValue();
         for (String key : target) {
-            if (target.toString().substring(0, find.length()).equals(find)) {
+            if (key.substring(0, find.length()).equals(find)) {
                 flag = true;
-                System.out.println(target.toString());
-                break;
+                System.out.println(key);
             }
         }
         if (!flag) {
