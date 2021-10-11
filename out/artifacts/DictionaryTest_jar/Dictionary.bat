@@ -1,1 +1,0 @@
-start java -jar OOP-Dictionary-Project.jar
