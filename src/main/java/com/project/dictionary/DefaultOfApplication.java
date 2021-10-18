@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import com.project.library.DictionaryManagement;
 
 import java.io.IOException;
 
@@ -15,6 +16,7 @@ public class DefaultOfApplication extends Application {
         stageDefault.setTitle("Dictionary");
         stageDefault.setScene(sceneDefault);
         stageDefault.show();
+        DictionaryManagement.insertFromFile();
     }
 
     public static void main(String[] args) {

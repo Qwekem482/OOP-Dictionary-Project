@@ -1,0 +1,42 @@
+animal	động vật
+as	như
+black	màu đen
+blue	màu xanh nước biển
+bye	tạm biệt
+city	thành phố
+day	ngày
+earth	đất
+eight	tám
+eye	mắt
+father	bố
+five	năm
+food	thực phẩm
+four	bốn
+from	từ
+good bye	chào tạm biệt
+grape	quả nho
+gray	màu xám
+green	màu xanh lá cây
+hello	xin chào
+his	anh ta
+home	nhà
+house	ngôi nhà
+i	tôi
+mother	mẹ
+near	gần
+nine	chín
+one	một
+or	hoặc
+pineapple	quả dứa
+purple	màu tím
+red	màu đỏ
+school	trường học
+seven	bảy
+six	sáu
+ten	mười
+three	ba
+tree	cây
+two	hai
+white	màu trắng
+yellow	màu vàng
+you	bạn

@@ -5,13 +5,15 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.DefaultController">
    <children>
       <MenuBar>
         <menus>
@@ -20,9 +22,13 @@
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" onAction="#fileToAdd" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Add new word...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Modify word..." />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -32,21 +38,54 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox prefHeight="375.0" prefWidth="600.0">
+      <HBox prefHeight="520.0" prefWidth="699.0">
          <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
             <VBox prefHeight="375.0" prefWidth="213.0">
                <children>
                   <Separator opacity="0.0" prefHeight="22.0" prefWidth="214.0" />
                   <HBox prefHeight="25.0" prefWidth="214.0">
                      <children>
                         <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-                        <TextField />
+                        <TextField fx:id="searchWord" />
                         <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-                        <Button mnemonicParsing="false" text="Search" />
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#enterToSearch" text="Search" />
                      </children>
                   </HBox>
                   <Separator opacity="0.0" prefHeight="22.0" prefWidth="193.0" />
-                  <TextFlow prefHeight="299.0" prefWidth="214.0" />
+                  <Button mnemonicParsing="false" onAction="#defaultWordList" prefHeight="15.0" prefWidth="214.0" text="Show Available Word" textAlignment="CENTER" />
+                  <Separator opacity="0.0" prefHeight="13.0" prefWidth="214.0" />
+                  <TextArea fx:id="engList" prefHeight="416.0" prefWidth="214.0" />
+               </children>
+            </VBox>
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="520.0" prefWidth="36.0" />
+            <VBox prefHeight="520.0" prefWidth="578.0">
+               <children>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Dictionary" textAlignment="CENTER" wrappingWidth="581.3366146087646">
+                     <font>
+                        <Font name="Freestyle Script" size="66.0" />
+                     </font>
+                  </Text>
+                  <HBox prefHeight="29.0" prefWidth="582.0">
+                     <children>
+                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="English" textAlignment="CENTER" wrappingWidth="290.136754989624">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fontSmoothingType="LCD" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vietnamese" textAlignment="CENTER" wrappingWidth="290.9368041753769">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="414.0" prefWidth="582.0">
+                     <children>
+                        <TextArea fx:id="engSearchList" prefHeight="414.0" prefWidth="286.0" />
+                        <TextArea fx:id="vieSearchList" layoutX="10.0" layoutY="10.0" prefHeight="414.0" prefWidth="294.0" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 public class AddNewWordController {
 
     @FXML
@@ -15,7 +17,7 @@ public class AddNewWordController {
     private TextField vietnameseInput;
 
     @FXML
-    public void confirmAction(ActionEvent event) {
+    public void confirmAction(ActionEvent event) throws FileNotFoundException {
         DictionaryManagement.insertFromApp(englishInput.getText(), vietnameseInput.getText());
         Node source = (Node)  event.getSource();
         Stage stage  = (Stage) source.getScene().getWindow();
