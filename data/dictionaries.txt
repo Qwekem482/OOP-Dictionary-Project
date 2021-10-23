@@ -1,4 +1,4 @@
-abandon	loại bỏ
+abadon	loại bỏ
 animal	động vật
 as	như
 black	màu đen

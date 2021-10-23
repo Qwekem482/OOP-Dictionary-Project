@@ -34,12 +34,12 @@
                      </accelerator></MenuItem>
                   <Menu mnemonicParsing="false" text="ModifyWord">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="ModifyEng">
+                      <MenuItem mnemonicParsing="false" onAction="#ReWriteWord" text="ModifyEng">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="ModifyViet">
+                        <MenuItem mnemonicParsing="false" onAction="#RewriteMeaning" text="ModifyViet">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>

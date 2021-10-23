@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="329.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.ModifyEngController">
+<AnchorPane prefHeight="286.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.ModifyEngController">
    <children>
-      <TextField fx:id="ChangeInto" layoutX="251.0" layoutY="149.0" />
-      <TextField fx:id="WordChange" layoutX="251.0" layoutY="70.0" />
-      <Label layoutX="89.0" layoutY="154.0" text="Change into:" />
-      <Label layoutX="84.0" layoutY="86.0" text="Word change:" />
-      <Button layoutX="335.0" layoutY="245.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="114.0" text="Cancel" />
-      <Button fx:id="Comfirm" defaultButton="true" layoutX="63.0" layoutY="245.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="31.0" prefWidth="114.0" text="Confirm" />
+      <TextField fx:id="ChangeInto" layoutX="158.0" layoutY="134.0" />
+      <TextField fx:id="WordChange" layoutX="158.0" layoutY="70.0" />
+      <Label layoutX="57.0" layoutY="139.0" text="Change into:" />
+      <Label layoutX="57.0" layoutY="75.0" text="Word change:" />
+      <Button layoutX="271.0" layoutY="188.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="114.0" text="Cancel" />
+      <Button fx:id="Comfirm" defaultButton="true" layoutX="47.0" layoutY="188.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="31.0" prefWidth="114.0" text="Confirm" />
    </children>
 </AnchorPane>

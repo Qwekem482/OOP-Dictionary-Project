@@ -96,4 +96,18 @@ public class DictionaryManagement {
         return "Error";
     }
 
+    public static String ModifyWord(String needModify, String newModify) throws FileNotFoundException {
+        if (dict.modifyWord(needModify, newModify)) {
+            dictionaryExportToFile();
+            return "Success";
+        }
+        return "Error";
+    }
+
+    public static String ModifyMean(String needModifyy, String newMeaningg) throws FileNotFoundException {
+        if (dict.modifyMeaning(needModifyy, newMeaningg)){
+            return "Success";
+        }
+        return "Error";
+    }
 }

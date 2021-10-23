@@ -19,7 +19,7 @@ public class DefaultController {
     @FXML
     public void fileToAdd(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("AddNewWordView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 350, 210);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
         Stage stage = new Stage();
         stage.setTitle("Add New Word");
         stage.setScene(scene);
@@ -30,9 +30,31 @@ public class DefaultController {
     @FXML
     public void fileToDelete(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("DeleteWordView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 350, 210);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
         Stage stage = new Stage();
         stage.setTitle("Delete Word");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    }
+
+    @FXML
+    public void ReWriteWord(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("ModifyEngView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
+        Stage stage = new Stage();
+        stage.setTitle("Modify Eng Word");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    }
+
+    @FXML
+    public void RewriteMeaning(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("ModifyVietView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
+        Stage stage = new Stage();
+        stage.setTitle("Modify Meaning Word");
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();

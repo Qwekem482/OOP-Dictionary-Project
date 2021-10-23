@@ -58,4 +58,24 @@ public class Dictionary {
         }
         return false;
     }
+
+    public boolean modifyWord(String needModify, String newModify) {
+        if (needModify.equals(newModify)) return false;
+        if (list.containsKey(needModify)) {
+            this.list.put(newModify, list.get(needModify));
+            list.remove(needModify);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean modifyMeaning(String needModify, String newMeaning) {
+        if (needModify.equals(newMeaning)) return false;
+        if (list.containsKey(needModify)) {
+            list.remove(needModify);
+            this.list.put(needModify, newMeaning);
+            return true;
+        }
+        return false;
+    }
 }
