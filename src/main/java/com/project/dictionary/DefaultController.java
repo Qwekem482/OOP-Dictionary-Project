@@ -28,6 +28,17 @@ public class DefaultController {
     }
 
     @FXML
+    public void fileToDelete(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("DeleteWordView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 350, 210);
+        Stage stage = new Stage();
+        stage.setTitle("Delete Word");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.show();
+    }
+
+    @FXML
     private TextArea engList;
 
     @FXML

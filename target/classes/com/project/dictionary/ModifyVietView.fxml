@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.project.dictionary.ModifyVietController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="332.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.ModifyVietController">
+   <children>
+      <TextField fx:id="ChangeInto" layoutX="252.0" layoutY="170.0" />
+      <TextField fx:id="WordChange" layoutX="252.0" layoutY="91.0" />
+      <Label layoutX="73.0" layoutY="164.0" text="Change into:" />
+      <Label layoutX="73.0" layoutY="96.0" text="Word change:" />
+      <Button layoutX="325.0" layoutY="255.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="114.0" text="Cancel" />
+      <Button defaultButton="true" layoutX="73.0" layoutY="255.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="31.0" prefWidth="114.0" text="Confirm" />
+   </children>
 </AnchorPane>
