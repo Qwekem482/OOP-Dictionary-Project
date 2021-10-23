@@ -3,7 +3,6 @@ animal	động vật
 as	như
 black	màu đen
 blue	màu xanh nước biển
-bye	tạm biệt
 city	thành phố
 day	ngày
 earth	đất
@@ -14,7 +13,6 @@ five	năm
 food	thực phẩm
 four	bốn
 from	từ
-fun	vui
 good bye	chào tạm biệt
 grape	quả nho
 gray	màu xám
@@ -23,7 +21,6 @@ hello	bạn
 his	anh ta
 home	nhà
 house	ngôi nhà
-i	tôi
 mother	mẹ
 near	gần
 nine	chín
