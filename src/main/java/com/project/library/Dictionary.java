@@ -50,4 +50,12 @@ public class Dictionary {
         }
         writeToFile.close();
     }
+
+    public boolean deleteWord(String needDelete) {
+        if (list.containsKey(needDelete)) {
+            this.list.remove(needDelete);
+            return true;
+        }
+        return false;
+    }
 }

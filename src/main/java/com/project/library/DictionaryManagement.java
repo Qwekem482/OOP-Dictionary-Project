@@ -87,4 +87,13 @@ public class DictionaryManagement {
         writer.close();
         dict.exportDictToFile(dataFile);
     }
+
+    public static String DeleteWord(String Delete) throws FileNotFoundException {
+        if (dict.deleteWord(Delete)) {
+            dictionaryExportToFile();
+            return "Success";
+        }
+        return "Error";
+    }
+
 }

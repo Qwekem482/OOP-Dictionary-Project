@@ -1,4 +1,4 @@
-module OOP.Dictionary.Project {
+module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,6 +10,6 @@ module OOP.Dictionary.Project {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.project.dictionary to javafx.fxml;
-    exports com.project.dictionary;
+    opens com.example.demo to javafx.fxml;
+    exports com.example.demo;
 }

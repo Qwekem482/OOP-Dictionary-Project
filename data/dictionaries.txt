@@ -1,3 +1,4 @@
+abandon	loại bỏ
 animal	động vật
 as	như
 black	màu đen
@@ -13,11 +14,12 @@ five	năm
 food	thực phẩm
 four	bốn
 from	từ
+fun	vui
 good bye	chào tạm biệt
 grape	quả nho
 gray	màu xám
 green	màu xanh lá cây
-hello	xin chào
+hello	bạn
 his	anh ta
 home	nhà
 house	ngôi nhà
@@ -30,6 +32,7 @@ or	hoặc
 pineapple	quả dứa
 purple	màu tím
 red	màu đỏ
+sad	vui
 school	trường học
 seven	bảy
 six	sáu
