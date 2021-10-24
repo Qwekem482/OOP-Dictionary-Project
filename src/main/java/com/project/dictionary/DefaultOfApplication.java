@@ -3,6 +3,7 @@ package com.project.dictionary;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import com.project.library.DictionaryManagement;
 
@@ -18,6 +19,7 @@ public class DefaultOfApplication extends Application {
         stageDefault.setScene(sceneDefault);
         stageDefault.setResizable(false);
         stageDefault.show();
+        Font.loadFont(DefaultOfApplication.class.getResourceAsStream("../../../../../data/freescript.ttf"), 82);
         DictionaryManagement.insertFromFile();
     }
 

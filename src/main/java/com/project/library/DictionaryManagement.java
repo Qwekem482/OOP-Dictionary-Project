@@ -54,10 +54,13 @@ public class DictionaryManagement {
             if (inputScan.hasNext()) {
                 inputScan = inputScan.useDelimiter("\\n");
                 String inputProcess = inputScan.next();
-                word.setDevCreateWord(Boolean.parseBoolean(inputProcess.substring(1, inputProcess.length() - 1)));
+                word.setDevCreateWord(Boolean.parseBoolean(inputProcess.substring(1)));
+                //System.out.println(inputProcess.substring(1));
             }
             dict.addWordToDict(word);
         }
+        //TreeMap<String, Word> list = dict.getWordList();
+        //System.out.println(list.get("day").isDevCreateWord());
     }
 
     /**

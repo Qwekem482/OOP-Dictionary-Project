@@ -5,8 +5,10 @@ import com.project.library.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -72,7 +74,7 @@ public class DefaultController {
 
     @FXML
     public void about(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("DeleteWordView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(DefaultOfApplication.class.getResource("AboutView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 355, 204);
         Stage stage = new Stage();
         stage.setTitle("Tác giả");
@@ -80,6 +82,11 @@ public class DefaultController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.show();
+    }
+    
+    @FXML
+    public void exit(ActionEvent event) {
+        System.exit(0);
     }
 
     @FXML

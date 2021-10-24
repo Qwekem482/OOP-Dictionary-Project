@@ -22,27 +22,27 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Đóng ứng dụng" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#fileToAdd" text="Add new word...">
+              <MenuItem mnemonicParsing="false" onAction="#fileToAdd" text="Thêm từ mới">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#fileToDelete" text="DeleteWord">
+                  <MenuItem mnemonicParsing="false" onAction="#fileToDelete" text="Xóa từ">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <Menu mnemonicParsing="false" text="ModifyWord">
+                  <Menu mnemonicParsing="false" text="Sửa từ">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#ReWriteWord" text="ModifyEng">
+                      <MenuItem mnemonicParsing="false" onAction="#ReWriteWord" text="Sửa phần tiếng Anh">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" onAction="#RewriteMeaning" text="ModifyViet">
+                        <MenuItem mnemonicParsing="false" onAction="#RewriteMeaning" text="Sửa phần tiếng Việt">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator>
@@ -52,14 +52,9 @@
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
-            <items>
-                  <Menu mnemonicParsing="false" text="About">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Qwekem" />
-                        <MenuItem mnemonicParsing="false" text="letthai" />
-                    </items>
-                  </Menu>
-            </items>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="Tác giả" />
+               </items>
           </Menu>
         </menus>
       </MenuBar>
@@ -116,14 +111,14 @@
                                                 </TextArea>
                                                 <HBox prefHeight="25.0" prefWidth="422.0">
                                                    <children>
-                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="44.0" />
-                                                      <TextArea fx:id="ipaResult" prefHeight="16.0" prefWidth="200.0" stylesheets="@white.css">
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="35.0" />
+                                                      <TextArea fx:id="ipaResult" prefHeight="36.0" prefWidth="191.0" stylesheets="@white.css">
                                                          <font>
                                                             <Font name="Arial" size="15.0" />
                                                          </font>
                                                       </TextArea>
-                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="26.0" prefWidth="168.0" />
-                                                      <Button fx:id="ipaSound" mnemonicParsing="false" onAction="#sound" text="Nghe" visible="false" />
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="124.0" />
+                                                      <Button fx:id="ipaSound" mnemonicParsing="false" onAction="#sound" prefHeight="26.0" prefWidth="69.0" text="Nghe" visible="false" />
                                                    </children>
                                                 </HBox>
                                                 <HBox prefHeight="25.0" prefWidth="422.0">
@@ -147,7 +142,7 @@
                                                 </HBox>
                                                 <HBox prefHeight="42.0" prefWidth="422.0">
                                                    <children>
-                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="37.0" prefWidth="300.0" />
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="31.0" prefWidth="157.0" />
                                                       <TextArea fx:id="confirmation" editable="false" prefHeight="31.0" prefWidth="267.0" stylesheets="@white.css" />
                                                    </children>
                                                 </HBox>
