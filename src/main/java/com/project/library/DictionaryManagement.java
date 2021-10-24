@@ -17,10 +17,9 @@ public class DictionaryManagement {
     /**
      * Insert word to dictionary by application.
      */
-    public static void insertFromApp(String english, String vietnamese) throws FileNotFoundException {
-        w1.setWord_target(english);
-        w1.setWord_explain(vietnamese);
-        if (w1.getWord_target() != null && w1.getWord_explain() != null) {
+    public static void insertFromApp(String english, String vietnamese, String ipa, String grammar) throws FileNotFoundException {
+        Word word = new Word(english, vietnamese, ipa, grammar, Word.NOT_DEV_CREATE);
+        if (word.getWord_target() != "" && word.getWord_explain() != "") {
             dict.addWordToDict(w1);
         }
         dictionaryExportToFile();
@@ -34,19 +33,30 @@ public class DictionaryManagement {
      */
     public static void insertFromFile() throws FileNotFoundException {
         Path currentDir = Path.of(System.getProperty("user.dir"));
-        Path dataDir = currentDir.resolve("data//dictionaries.txt");
+        Path dataDir = currentDir.resolve("data//dictionary//dictionaries.txt");
         File dataFile = new File(String.valueOf(dataDir));
         Scanner inputScan = new Scanner(dataFile);
         while (inputScan.hasNext()) {
+            Word word = new Word();
             if (inputScan.hasNext()) {
                 inputScan = inputScan.useDelimiter("\\t");
-                w1.setWord_target(inputScan.next());
+                word.setWord_target(inputScan.next());
+            }
+            if (inputScan.hasNext()) {
+                word.setWord_explain(inputScan.next());
+            }
+            if (inputScan.hasNext()) {
+                word.setIpa(inputScan.next());
+            }
+            if (inputScan.hasNext()) {
+                word.setGrammar(inputScan.next());
             }
             if (inputScan.hasNext()) {
                 inputScan = inputScan.useDelimiter("\\n");
-                w1.setWord_explain(inputScan.next());
+                String inputProcess = inputScan.next();
+                word.setDevCreateWord(Boolean.parseBoolean(inputProcess.substring(1, inputProcess.length() - 1)));
             }
-            dict.addWordToDict(w1);
+            dict.addWordToDict(word);
         }
     }
 
@@ -58,29 +68,28 @@ public class DictionaryManagement {
         return dict.getEngList();
     }
 
-    public static TreeMap<String, String> search(String find) {
-        TreeMap<String, String> forReturn = new TreeMap<String, String>();
+    public static TreeMap<String, Word> search(String find) {
+        TreeMap<String, Word> forReturn = new TreeMap<String, Word>();
         boolean flag = false;
-        int i = 1;
-        TreeMap<String, String> allWordList = dict.getWordList();
+        TreeMap<String, Word> allWordList = dict.getWordList();
         for (String key : allWordList.keySet()) {
             if (key.length() >= find.length()) {
                 if (key.substring(0, find.length()).equals(find)) {
                     flag = true;
                     forReturn.put(key, allWordList.get(key));
-                    i++;
                 }
             }
         }
         if (!flag) {
-            forReturn.put("NOT FOUND", "PLEASE CHECK SPELLING AND/OR TRY AGAIN");
+            Word word = new Word();
+            forReturn.put("TỪ ĐIỂN KHÔNG CÓ TỪ BẠN CẦN", word);
         }
         return forReturn;
     }
 
     public static void dictionaryExportToFile() throws FileNotFoundException {
         Path currentDir = Path.of(System.getProperty("user.dir"));
-        Path dataDir = currentDir.resolve("data//dictionaries.txt");
+        Path dataDir = currentDir.resolve("data//dictionary//dictionaries.txt");
         File dataFile = new File(String.valueOf(dataDir));
         PrintWriter writer = new PrintWriter(dataFile);
         writer.print("");

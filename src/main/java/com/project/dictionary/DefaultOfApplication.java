@@ -9,12 +9,14 @@ import com.project.library.DictionaryManagement;
 import java.io.IOException;
 
 public class DefaultOfApplication extends Application {
+
     @Override
     public void start(Stage stageDefault) throws IOException {
         FXMLLoader fxmlLoaderDefault = new FXMLLoader(DefaultOfApplication.class.getResource("DictionaryView.fxml"));
         Scene sceneDefault = new Scene(fxmlLoaderDefault.load(), 840, 610);
-        stageDefault.setTitle("Dictionary");
+        stageDefault.setTitle("Simple Dictionary");
         stageDefault.setScene(sceneDefault);
+        stageDefault.setResizable(false);
         stageDefault.show();
         DictionaryManagement.insertFromFile();
     }

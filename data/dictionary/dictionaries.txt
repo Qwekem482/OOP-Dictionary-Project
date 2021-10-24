@@ -1,0 +1,45 @@
+abandon	loại bỏ	/əˈbæn.dən/	Unknown	true
+animal	động vật	/ˈæn.ɪ.məl/	Unknown	true
+as	như	/æz/	Unknown	true
+black	màu đen	/blæk/	Unknown	true
+blue	màu xanh nước biển	/bluː/	Unknown	true
+bye	tạm biệt	/baɪ	Unknown/	true
+city	thành phố	/ˈsɪt.i/	Unknown	true
+day	ngày	/deɪ/	Unknown	true
+earth	đất	/ɜːθ/	Unknown	true
+eight	tám	/eɪt/	Unknown	true
+eye	mắt	/aɪ/	Unknown	true
+father	bố	/ˈfɑː.ðər/	Unknown	true
+five	năm	/faɪv/	Unknown	true
+food	thực phẩm	/fuːd/	Unknown	true
+four	bốn	/fɔːr/	Unknown	true
+from	từ	/frɒm/	Unknown	true
+fun	vui	/fʌn/	Unknown	true
+goodbye	chào tạm biệt	/ɡʊdˈbaɪ/	Unknown	true
+grape	quả nho	/ɡreɪp/	Unknown	true
+gray	màu xám	/ɡreɪ/	Unknown	true
+green	màu xanh lá cây	/ɡriːn/	Unknown	true
+hello	bạn	/heˈləʊ/	Unknown	true
+his	anh ta	/hɪz/	Unknown	true
+home	nhà	/həʊm/	Unknown	true
+house	ngôi nhà	/haʊs/	Unknown	true
+i	tôi	/aɪ/	Unknown	true
+mother	mẹ	/ˈmʌð.ər/	Unknown	true
+near	gần	/nɪər/	Unknown	true
+nine	chín	/naɪn/	Unknown	true
+one	một	/wʌn/	Unknown	true
+or	hoặc	/ɔːr/	Unknown	true
+pineapple	quả dứa	/ˈpaɪnˌæp.əl/	Unknown	true
+purple	màu tím	/ˈpaɪnˌæp.əl/	Unknown	true
+red	màu đỏ	/red/	Unknown	true
+sad	buồn	/sæd/	Unknown	true
+school	trường học	/skuːl/	Unknown	true
+seven	bảy	/ˈsev.ən/	Unknown	true
+six	sáu	/sɪks/	Unknown	true
+ten	mười	/ten/	Unknown	true
+three	ba	/θriː/	Unknown	true
+tree	cây	/triː/	Unknown	true
+two	hai	/tuː/	Unknown	true
+white	màu trắng	/waɪt/	Unknown	true
+yellow	màu vàng	/ˈjel.əʊ/	Unknown	true
+you	bạn	/juː/	Unknown	true

@@ -9,6 +9,7 @@ module OOP.Dictionary.Project {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.media;
 
     opens com.project.dictionary to javafx.fxml;
     exports com.project.dictionary;

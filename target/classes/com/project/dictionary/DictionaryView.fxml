@@ -7,13 +7,16 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.DefaultController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.DefaultController">
    <children>
       <MenuBar>
         <menus>
@@ -24,7 +27,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Add new word...">
+              <MenuItem mnemonicParsing="false" onAction="#fileToAdd" text="Add new word...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -71,11 +74,11 @@
                         <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
                         <TextField fx:id="searchWord" />
                         <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-                        <Button defaultButton="true" mnemonicParsing="false" onAction="#enterToSearch" text="Search" />
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#enterToSearch" text="Tìm" />
                      </children>
                   </HBox>
                   <Separator opacity="0.0" prefHeight="22.0" prefWidth="193.0" />
-                  <Button mnemonicParsing="false" onAction="#defaultWordList" prefHeight="15.0" prefWidth="214.0" text="Show Available Word" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#defaultWordList" prefHeight="15.0" prefWidth="214.0" text="Các từ có sẵn" textAlignment="CENTER" />
                   <Separator opacity="0.0" prefHeight="13.0" prefWidth="214.0" />
                   <TextArea fx:id="engList" prefHeight="416.0" prefWidth="214.0" />
                </children>
@@ -83,29 +86,80 @@
             <Separator opacity="0.0" orientation="VERTICAL" prefHeight="520.0" prefWidth="36.0" />
             <VBox prefHeight="520.0" prefWidth="578.0">
                <children>
-                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Dictionary" textAlignment="CENTER" wrappingWidth="581.3366146087646">
+                  <Text id="Simple Dictionary" strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Dictionary" textAlignment="CENTER" wrappingWidth="578.0734252929688">
                      <font>
-                        <Font name="Freestyle Script" size="66.0" />
+                        <Font name="Freestyle Script" size="82.0" />
                      </font>
                   </Text>
-                  <HBox prefHeight="29.0" prefWidth="582.0">
+                  <Separator opacity="0.0" prefHeight="8.0" prefWidth="578.0" />
+                  <HBox prefHeight="415.0" prefWidth="578.0">
                      <children>
-                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="English" textAlignment="CENTER" wrappingWidth="290.136754989624">
-                           <font>
-                              <Font name="SansSerif Regular" size="14.0" />
-                           </font>
-                        </Text>
-                        <Text fontSmoothingType="LCD" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vietnamese" textAlignment="CENTER" wrappingWidth="290.9368041753769">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="414.0" prefWidth="582.0">
-                     <children>
-                        <TextArea fx:id="engSearchList" prefHeight="414.0" prefWidth="286.0" />
-                        <TextArea fx:id="vieSearchList" layoutX="10.0" layoutY="10.0" prefHeight="414.0" prefWidth="294.0" />
+                        <StackPane prefHeight="415.0" prefWidth="547.0">
+                           <children>
+                              <ImageView fitHeight="416.0" fitWidth="589.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../data/images/whitebg.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Separator opacity="0.0" prefHeight="41.0" prefWidth="547.0" />
+                                    <HBox prefHeight="333.0" prefWidth="547.0">
+                                       <children>
+                                          <Separator opacity="0.0" orientation="VERTICAL" prefHeight="298.0" prefWidth="61.0" />
+                                          <VBox prefHeight="298.0" prefWidth="422.0">
+                                             <children>
+                                                <TextArea fx:id="engResult" editable="false" prefHeight="49.0" prefWidth="422.0" stylesheets="@white.css">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="38.0" />
+                                                   </font>
+                                                </TextArea>
+                                                <HBox prefHeight="25.0" prefWidth="422.0">
+                                                   <children>
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="44.0" />
+                                                      <TextArea fx:id="ipaResult" prefHeight="16.0" prefWidth="200.0" stylesheets="@white.css">
+                                                         <font>
+                                                            <Font name="Arial" size="15.0" />
+                                                         </font>
+                                                      </TextArea>
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="26.0" prefWidth="168.0" />
+                                                      <Button fx:id="ipaSound" mnemonicParsing="false" onAction="#sound" text="Nghe" visible="false" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="25.0" prefWidth="422.0">
+                                                   <children>
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="37.0" prefWidth="35.0" />
+                                                      <TextArea fx:id="grammarResult" prefHeight="37.0" prefWidth="192.0" stylesheets="@white.css">
+                                                         <font>
+                                                            <Font name="Arial" size="15.0" />
+                                                         </font>
+                                                      </TextArea>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="160.0" prefWidth="422.0">
+                                                   <children>
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="144.0" prefWidth="35.0" />
+                                                      <TextArea fx:id="vieResult" editable="false" prefHeight="143.0" prefWidth="379.0" stylesheets="@white.css">
+                                                         <font>
+                                                            <Font size="25.0" />
+                                                         </font></TextArea>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="42.0" prefWidth="422.0">
+                                                   <children>
+                                                      <Separator opacity="0.0" orientation="VERTICAL" prefHeight="37.0" prefWidth="300.0" />
+                                                      <TextArea fx:id="confirmation" editable="false" prefHeight="31.0" prefWidth="267.0" stylesheets="@white.css" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <Separator opacity="0.0" orientation="VERTICAL" prefHeight="415.0" prefWidth="32.0" />
                      </children>
                   </HBox>
                </children>

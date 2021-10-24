@@ -15,10 +15,15 @@ public class AddNewWordController {
     private TextField englishInput;
     @FXML
     private TextField vietnameseInput;
+    @FXML
+    private TextField ipaInput;
+    @FXML
+    private TextField grammarInput;
 
     @FXML
     public void confirmAction(ActionEvent event) throws FileNotFoundException {
-        DictionaryManagement.insertFromApp(englishInput.getText(), vietnameseInput.getText());
+        DictionaryManagement.insertFromApp(englishInput.getText(), vietnameseInput.getText(),
+                ipaInput.getText(), grammarInput.getText());
         Node source = (Node)  event.getSource();
         Stage stage  = (Stage) source.getScene().getWindow();
         stage.close();
