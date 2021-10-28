@@ -5,7 +5,7 @@ public class Word {
     private String word_explain;
     private String ipa = "Không rõ";
     private String grammar = "Không rõ";
-    private int devCreateWord;
+    private boolean devCreateWord;
     public static final boolean NOT_DEV_CREATE = false;
 
     public void setWord_explain(String word_explain) {
@@ -38,7 +38,7 @@ public class Word {
         this.grammar = grammar;
     }
 
-    public void setDevCreateWord(int devCreateWord) {
+    public void setDevCreateWord(boolean devCreateWord) {
         this.devCreateWord = devCreateWord;
     }
 
@@ -70,10 +70,10 @@ public class Word {
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
         this.word_explain = word_explain;
-        this.devCreateWord = 0;
+        this.devCreateWord = false;
     }
 
-    public Word(String word_target, String word_explain, String ipa, String grammar, int devCreateWord) {
+    public Word(String word_target, String word_explain, String ipa, String grammar, boolean devCreateWord) {
         this.word_target = word_target;
         this.word_explain = word_explain;
         this.ipa = ipa;

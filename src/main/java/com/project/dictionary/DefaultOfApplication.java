@@ -21,7 +21,7 @@ public class DefaultOfApplication extends Application {
         stageDefault.setResizable(false);
         stageDefault.show();
         Font.loadFont(DefaultOfApplication.class.getResourceAsStream("../../../../../data/freescript.ttf"), 82);
-        DictionaryManagement.getConnect();
+        DictionaryManagement.insertFromFile();
     }
 
     public static void main(String[] args) {

@@ -33,7 +33,7 @@ public class DictionaryManagement {
      *
      * @throws FileNotFoundException when cannot find file
      */
-    public static void getConnect() throws ClassNotFoundException, SQLException {
+    /*public static void getConnect() throws ClassNotFoundException, SQLException {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary", "root", "Thaidepzai1@");
         Statement statement = connection.createStatement();
         ResultSet resultset = statement.executeQuery("select * from dict");
@@ -51,7 +51,7 @@ public class DictionaryManagement {
             word.setDevCreateWord(dev);
             dict.addWordToDict(word);
         }
-    }
+    }*/
 
     /**
      * Read data from file then add word to dict.
@@ -59,7 +59,7 @@ public class DictionaryManagement {
      *
      * @throws FileNotFoundException when cannot find file
      */
-   /* public static void insertFromFile() throws FileNotFoundException {
+    public static void insertFromFile() throws FileNotFoundException {
         Path currentDir = Path.of(System.getProperty("user.dir"));
         Path dataDir = currentDir.resolve("data//dictionary//dictionaries.txt");
         File dataFile = new File(String.valueOf(dataDir));
@@ -80,14 +80,14 @@ public class DictionaryManagement {
                 word.setGrammar(inputScan.next());
             }
             if (inputScan.hasNext()) {
-                word.setDevCreateWord(inputScan.next());
+                word.setDevCreateWord(Boolean.parseBoolean(inputScan.next()));
                 //System.out.println(inputProcess.substring(1));
             }
             dict.addWordToDict(word);
         }
         //TreeMap<String, Word> list = dict.getWordList();
         //System.out.println(list.get("day").isDevCreateWord());
-    }*/
+    }
 
     /**
      * Show the English word list.
