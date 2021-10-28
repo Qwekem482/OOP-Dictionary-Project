@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Set;
@@ -26,12 +27,39 @@ public class DictionaryManagement {
     }
 
     /**
+     * Connection to SQLServer
+     * Read data from database then add word to dict.
+     * Word & meaning separate by tab.
+     *
+     * @throws FileNotFoundException when cannot find file
+     */
+    public static void getConnect() throws ClassNotFoundException, SQLException {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary", "root", "Thaidepzai1@");
+        Statement statement = connection.createStatement();
+        ResultSet resultset = statement.executeQuery("select * from dict");
+        while (resultset.next()) {
+            Word word = new Word();
+            String Word = resultset.getString(2);
+            String Mean = resultset.getString(3);
+            String ipa = resultset.getString(4);
+            String grammar = resultset.getString(5);
+            int dev = resultset.getInt(6);
+            word.setWord_target(Word);
+            word.setWord_explain(Mean);
+            word.setIpa(ipa);
+            word.setGrammar(grammar);
+            word.setDevCreateWord(dev);
+            dict.addWordToDict(word);
+        }
+    }
+
+    /**
      * Read data from file then add word to dict.
      * Word & meaning separate by tab.
      *
      * @throws FileNotFoundException when cannot find file
      */
-    public static void insertFromFile() throws FileNotFoundException {
+   /* public static void insertFromFile() throws FileNotFoundException {
         Path currentDir = Path.of(System.getProperty("user.dir"));
         Path dataDir = currentDir.resolve("data//dictionary//dictionaries.txt");
         File dataFile = new File(String.valueOf(dataDir));
@@ -52,19 +80,18 @@ public class DictionaryManagement {
                 word.setGrammar(inputScan.next());
             }
             if (inputScan.hasNext()) {
-                inputScan = inputScan.useDelimiter("\\n");
-                String inputProcess = inputScan.next();
-                word.setDevCreateWord(Boolean.parseBoolean(inputProcess.substring(1)));
+                word.setDevCreateWord(inputScan.next());
                 //System.out.println(inputProcess.substring(1));
             }
             dict.addWordToDict(word);
         }
         //TreeMap<String, Word> list = dict.getWordList();
         //System.out.println(list.get("day").isDevCreateWord());
-    }
+    }*/
 
     /**
      * Show the English word list.
+     *
      * @return English word list
      */
     public static ArrayList<String> showEngList() {
@@ -117,7 +144,7 @@ public class DictionaryManagement {
     }
 
     public static String ModifyMean(String needModifyy, String newMeaningg) throws FileNotFoundException {
-        if (dict.modifyMeaning(needModifyy, newMeaningg)){
+        if (dict.modifyMeaning(needModifyy, newMeaningg)) {
             return "Success";
         }
         return "Error";

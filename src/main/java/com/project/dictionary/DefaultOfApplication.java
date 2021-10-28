@@ -8,11 +8,12 @@ import javafx.stage.Stage;
 import com.project.library.DictionaryManagement;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class DefaultOfApplication extends Application {
 
     @Override
-    public void start(Stage stageDefault) throws IOException {
+    public void start(Stage stageDefault) throws IOException, SQLException, ClassNotFoundException {
         FXMLLoader fxmlLoaderDefault = new FXMLLoader(DefaultOfApplication.class.getResource("DictionaryView.fxml"));
         Scene sceneDefault = new Scene(fxmlLoaderDefault.load(), 840, 610);
         stageDefault.setTitle("Simple Dictionary");
@@ -20,10 +21,11 @@ public class DefaultOfApplication extends Application {
         stageDefault.setResizable(false);
         stageDefault.show();
         Font.loadFont(DefaultOfApplication.class.getResourceAsStream("../../../../../data/freescript.ttf"), 82);
-        DictionaryManagement.insertFromFile();
+        DictionaryManagement.getConnect();
     }
 
     public static void main(String[] args) {
+
         launch();
     }
 }
