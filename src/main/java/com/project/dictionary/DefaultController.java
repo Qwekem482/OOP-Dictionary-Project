@@ -83,7 +83,7 @@ public class DefaultController {
         stage.setResizable(false);
         stage.show();
     }
-    
+
     @FXML
     public void exit(ActionEvent event) {
         System.exit(0);

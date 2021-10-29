@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="204.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.DeleteWordController">
+<AnchorPane prefHeight="204.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.dictionary.DeleteWordController">
    <children>
       <Button defaultButton="true" layoutX="37.0" layoutY="151.0" mnemonicParsing="false" onAction="#Confirm" prefHeight="31.0" prefWidth="111.0" text="Confirm" />
       <Button layoutX="221.0" layoutY="151.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="31.0" prefWidth="111.0" text="Cancel" />
