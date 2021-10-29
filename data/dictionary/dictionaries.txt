@@ -29,6 +29,7 @@ near	gần	/nɪər/	Unknown	true
 nine	chín	/naɪn/	Unknown	true
 one	một	/wʌn/	Unknown	true
 or	hoặc	/ɔːr/	Unknown	true
+orange	cam	/ˈɒr.ɪndʒ/	danh từ	false
 pineapple	quả dứa	/ˈpaɪnˌæp.əl/	Unknown	true
 purple	màu tím	/ˈpaɪnˌæp.əl/	Unknown	true
 red	màu đỏ	/red/	Unknown	true

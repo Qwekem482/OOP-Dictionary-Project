@@ -20,7 +20,7 @@ public class DictionaryManagement {
     public static void insertFromApp(String english, String vietnamese, String ipa, String grammar) throws FileNotFoundException {
         Word word = new Word(english, vietnamese, ipa, grammar, Word.NOT_DEV_CREATE);
         if (word.getWord_target() != "" && word.getWord_explain() != "") {
-            dict.addWordToDict(w1);
+            dict.addWordToDict(word);
         }
         dictionaryExportToFile();
     }

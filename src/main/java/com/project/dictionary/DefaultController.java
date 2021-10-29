@@ -143,6 +143,11 @@ public class DefaultController {
             return;
         }
         TreeMap<String, Word> allSearchWords = DictionaryManagement.search(searchWord.getText());
+        if (allSearchWords.firstKey().equals("TỪ ĐIỂN KHÔNG CÓ TỪ BẠN CẦN")) {
+            engList.clear();
+            engResult.appendText("KHÔNG CÓ");
+            return;
+        }
         if (allSearchWords.size() > 1 || !allSearchWords.firstKey().equals(searchWord.getText())) {
             engList.clear();
             ipaSound.setVisible(false);
@@ -153,6 +158,7 @@ public class DefaultController {
             return;
         }
         if (allSearchWords.size() == 1 && allSearchWords.firstKey().equals(searchWord.getText())) {
+            engList.clear();
             Word forDisplay = allSearchWords.get(searchWord.getText().toLowerCase());
             engResult.appendText(forDisplay.getWord_target().toUpperCase());
             vieResult.appendText("Nghĩa: " + forDisplay.getWord_explain());
