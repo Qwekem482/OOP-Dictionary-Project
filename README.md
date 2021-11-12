@@ -9,3 +9,6 @@ Function:
   + Look for a word
   + Check all the dictionary
   + Modify a word
+
+Requirements:
+[Assignment 1 - Dictionary.pdf](https://github.com/Qwekem482/OOP-Dictionary-Project/files/7526831/Assignment.1.-.Dictionary.pdf)
